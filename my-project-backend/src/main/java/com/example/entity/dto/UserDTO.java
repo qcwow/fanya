@@ -13,11 +13,16 @@ import lombok.NoArgsConstructor;
 @Schema(title = "基础用户实体DTO", description = "存储系统所有用户的通用基础信息")
 public class UserDTO {
     /**
-     *
+     *ID
      */
     @TableId(value = "id", type = IdType.AUTO)
-    @Schema(description = "用户ID（自增主键）")
+    @Schema(description = "ID（自增主键）")
     private Long id;
+    /**
+     *用户ID
+     */
+    @Schema(description = "用户ID")
+    private Long userId;
     /**
      * 用户名
      */

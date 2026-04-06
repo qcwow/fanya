@@ -3,7 +3,6 @@ package com.example.entity.po;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.example.enums.UserRole;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,8 +18,18 @@ public class User {
      *ID
      */
     @TableId(value = "id", type = IdType.AUTO)
-    @Schema(description = "用户ID（自增主键）")
+    @Schema(description = "ID（自增主键）")
     private Long id;
+    /**
+     *用户ID
+     */
+    @Schema(description = "用户ID")
+    private Long userId;
+    /**
+     * 外部平台用户id
+     */
+    @Schema(description = "外部平台用户ID")
+    private String platformUserId;
     /**
      * 用户名
      */
@@ -36,4 +45,14 @@ public class User {
      */
     @Schema(description = "用户类型（1学生，2老师）")
     private Integer role;
+    /**
+     * 学校id
+     */
+    @Schema(description = "学校id")
+    private String schoolId;
+    /**
+     * 真实姓名
+     */
+    @Schema(description = "真实姓名")
+    private String realName;
 }
