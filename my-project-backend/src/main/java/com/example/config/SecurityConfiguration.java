@@ -37,7 +37,11 @@ public class SecurityConfiguration {
         return http
                 .authorizeHttpRequests(conf -> conf
                         // 允许登录接口、Swagger和错误页面访问
-                        .requestMatchers("/api/v1/user/login", "/error").permitAll()
+                        .requestMatchers(
+                                "/api/v1/user/login",
+                                "/api/v1/platform/**",
+                                "/error"
+                        ).permitAll()
                         .requestMatchers(
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",

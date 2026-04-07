@@ -29,7 +29,7 @@ public class QaInteractDTO {
     @Schema(description = "会话ID（用于维持多轮对话状态，首轮提问可为空）", example = "uuid-xxxx-xxxx")
     private String sessionId;
 
-    @Schema(description = "问题类型（如：KNOWLEDGE_POINT, SUMMARY, PRACTICE等）", example = "KNOWLEDGE_POINT")
+    @Schema(description = "问题类型", example = "KNOWLEDGE_POINT")
     private String questionType;
 
     @Schema(description = "用户提问的具体文本内容", example = "请解释一下什么是深度学习？")

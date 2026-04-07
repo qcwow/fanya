@@ -19,11 +19,6 @@ public class UserDTO {
     @Schema(description = "ID（自增主键）")
     private Long id;
     /**
-     *用户ID
-     */
-    @Schema(description = "用户ID")
-    private Long userId;
-    /**
      * 用户名
      */
     @Schema(description = "登录用户名（唯一）")

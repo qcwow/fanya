@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
+import com.example.entity.dto.SyncCourseDTO;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,8 +13,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -68,7 +67,7 @@ public class Course {
      * 学分
      */
     @Schema(description = "课程学分")
-    private Float credit;
+    private Double credit;
 
     /**
      * 学时
@@ -87,7 +86,7 @@ public class Course {
      */
     @TableField(typeHandler = JacksonTypeHandler.class)
     @Schema(description = "授课教师列表（JSON格式，存储教师姓名、工号等信息）")
-    private List<Map<String, String>> teacherInfo;
+    private List<SyncCourseDTO.TeacherInfo> teacherInfo;
 
     /**
      * 创建时间

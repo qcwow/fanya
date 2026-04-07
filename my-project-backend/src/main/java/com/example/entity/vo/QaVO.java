@@ -26,12 +26,23 @@ public class QaVO {
     @Schema(description = "回答类型（如：TEXT, CODE, IMAGE, CHART）", example = "TEXT")
     private String answerType;
 
-    @Schema(description = "关联的知识点详情（Key-Value 结构，存储知识点名称及简单描述）")
-    private Map<String, Object> relatedKnowledge;
+    @Schema(description = "关联的知识点详情")
+    private RelatedKnowledge relatedKnowledge;
 
     @Schema(description = "学习建议列表（针对当前问题的后续学习路径建议）")
     private List<String> suggestions;
 
     @Schema(description = "理解程度评估（基于问答上下文评估用户对该知识点的掌握情况）", example = "BASIC")
     private String understandingLevel;
+
+    @Data
+    @Builder
+    public static class RelatedKnowledge {
+        @Schema(description = "知识点ID", example = "know001")
+        private String knowledgeId;
+        @Schema(description = "知识点名称", example = "平面假设的工程简化意义")
+        private String knowledgeName;
+        @Schema(description = "关联章节ID", example = "sec002")
+        private String relatedSectionId;
+    }
 }

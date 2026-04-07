@@ -3,6 +3,7 @@ springdoc:
   paths-to-match: /api/**
   swagger-ui:
     operations-sorter: alpha
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/test
@@ -14,14 +15,12 @@ spring:
       key: 'abcdefghijklmn'
       expire: 72
       limit:
-        base: 10
+        base: 1
         upgrade: 300
-        frequency: 30
+        frequency: 100
     filter:
       order: -100
   web:
-    verify:
-      mail-limit: 60
     flow:
       period: 3
       limit: 50
@@ -30,3 +29,6 @@ spring:
       origin: '*'
       credentials: false
       methods: '*'
+fanya:
+  api:
+    static-key: '123456' # 这里填你和超星商定的密钥
