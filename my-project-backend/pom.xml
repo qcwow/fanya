@@ -58,6 +58,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
             <optional>true</optional>
         </dependency>
         <!--    测试模块    -->
@@ -100,10 +101,11 @@
             <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
             <version>4.4.0</version>
         </dependency>
+        <!-- Hutool Java工具类库（提供加密、HTTP、JSON等常用工具方法） -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.8.25</version>
+            <version>5.8.23</version>
         </dependency>
     </dependencies>
 

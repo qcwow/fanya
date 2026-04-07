@@ -28,13 +28,13 @@ public class Lesson {
      * 课程ID
      */
     @Schema(description = "关联的课程ID")
-    private Long courseId;
+    private String courseId;
 
     /**
      * 用户ID
      */
     @Schema(description = "上传者用户ID")
-    private Long userId;
+    private String userId;
 
     /**
      * 文件名称

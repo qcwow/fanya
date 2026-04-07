@@ -45,10 +45,10 @@ public class LessonScriptVO {
         @Schema(description = "预计讲解时长（单位：秒）", example = "120")
         private Integer duration;
 
-        @Schema(description = "关联的课件章节ID（对应 StructurePreview 中的章节）", example = "chap_1")
+        @Schema(description = "关联的课件章节ID（对应 StructurePreview 中的章节）", example = "sub001")
         private String relatedChapterId;
 
-        @Schema(description = "关联的原始课件页码（如：1-3）", example = "1")
+        @Schema(description = "关联的原始课件页码（如：3-5）", example = "3-5")
         private String relatedPage;
 
         @Schema(description = "本小节涵盖的核心知识点列表")
