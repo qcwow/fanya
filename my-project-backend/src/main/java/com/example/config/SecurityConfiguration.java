@@ -40,6 +40,8 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/v1/user/login", "/error").permitAll()
                         // 允许智课模块接口（开发测试用，生产环境应移除）
                         .requestMatchers("/api/v1/lesson/**").permitAll()
+                        // 允许学习进度模块接口（通过签名验证保证安全）
+                        .requestMatchers("/api/v1/progress/**").permitAll()
                         .requestMatchers(
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",
