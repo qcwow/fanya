@@ -70,8 +70,11 @@ public class SignUtils {
         String providedEnc = (String) allParams.get("enc");
         String time = (String) allParams.get("time");
 
-        if (providedEnc == null || time == null) {
-            throw new RuntimeException("请求参数缺失：enc 或 time 不能为空");
+        if (providedEnc == null || providedEnc.isEmpty()) {
+            throw new RuntimeException("请求参数缺失：enc（签名）不能为空");
+        }
+        if (time == null || time.isEmpty()) {
+            throw new RuntimeException("请求参数缺失：time（时间戳）不能为空，格式：yyyy-MM-dd HH:mm:ss");
         }
 
         // 3. 关键：打平嵌套对象 (Flatten)
