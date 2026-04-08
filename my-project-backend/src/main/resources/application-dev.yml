@@ -6,9 +6,9 @@ springdoc:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/test
-    username: root
-    password: qcw050110QCW@
+    url: jdbc:mysql://10.135.62.5:3306/fanya
+    username: qcwqcw
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   security:
     jwt:
@@ -31,4 +31,13 @@ spring:
       methods: '*'
 fanya:
   api:
-    static-key: '123456' # 这里填你和超星商定的密钥
+    static-key: '123456' # 这里填超星的密钥
+  ai:
+    deepseek:
+      api-key: "sk-2a2f7ee796e148b0a79ad8d0b59699a4"
+      url: "https://api.deepseek.com/chat/completions"
+      model: "deepseek-chat"
+    silicon:
+      api-key: "sk-yrridvtbdcstvyovepnedgetymqasonnghhjovkkkawozsmw"
+      url: "https://api.siliconflow.cn/v1/audio/transcriptions"
+      model: "funaudio/sense-voice-v1"

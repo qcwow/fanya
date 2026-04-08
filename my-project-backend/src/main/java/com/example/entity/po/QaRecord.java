@@ -21,78 +21,50 @@ import java.util.Map;
 @TableName(value = "db_qa_record", autoResultMap = true)
 public class QaRecord {
 
-    /**
-     * ID
-     */
     @TableId(value = "id", type = IdType.AUTO)
-    @Schema(description = "主键ID（自增）")
     private Long id;
 
-    /**
-     * 用户ID
-     */
-    @Schema(description = "关联的用户ID")
+    @Schema(description = "关联的内部用户ID（数字ID）")
     private Long userId;
 
-    /**
-     * 课程ID
-     */
-    @Schema(description = "关联的课程ID")
-    private Long lessonId;
+    @Schema(description = "所属学校ID")
+    private String schoolId; // 新增
 
-    /**
-     * 会话ID
-     */
-    @Schema(description = "问答会话标识ID（用于区分不同轮次的对话）")
+    @Schema(description = "关联的课程ID")
+    private String courseId; // 新增，且建议改为 String 兼容外部标识
+
+    @Schema(description = "关联的智课/资源ID")
+    private String lessonId; // 建议改为 String 兼容外部标识 "lesson2024..."
+
+    @Schema(description = "问答会话标识ID")
     private String sessionId;
 
-    /**
-     * 问题类型
-     */
-    @Schema(description = "问题分类/类型")
+    @Schema(description = "问题分类（text或voice）")
     private String questionType;
 
-    /**
-     * 问题内容
-     */
     @Schema(description = "用户提问的具体内容")
     private String questionContent;
 
-    /**
-     * 回答内容
-     */
     @Schema(description = "系统或AI返回的回答内容")
     private String answerContent;
 
-    /**
-     * 当前小节ID
-     */
-    @Schema(description = "提问时所处的小节ID")
-    private Long currentSectionId;
+    @Schema(description = "回答类型（text:纯文本, mixed:图文）")
+    private String answerType; // 新增
 
-    /**
-     * 理解程度
-     */
+    @Schema(description = "提问时所处的小节ID")
+    private String currentSectionId; // 建议改为 String 兼容外部标识 "sec002"
+
     @Schema(description = "用户对当前知识点的理解程度评价")
     private String understandingLevel;
 
-    /**
-     * 关联知识点
-     */
     @TableField(typeHandler = JacksonTypeHandler.class)
     @Schema(description = "关联的知识点详情（JSON格式存储）")
     private Map<String, Object> relatedKnowledge;
 
-    /**
-     * 学习建议
-     */
     @TableField(typeHandler = JacksonTypeHandler.class)
     @Schema(description = "针对该问题的学习建议列表（JSON格式存储）")
     private List<String> suggestions;
 
-    /**
-     * 创建时间
-     */
     @Schema(description = "记录创建时间")
     private LocalDateTime createTime;
 }

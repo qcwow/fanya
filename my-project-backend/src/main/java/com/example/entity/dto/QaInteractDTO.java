@@ -43,4 +43,7 @@ public class QaInteractDTO {
 
     @Schema(description = "加密校验码/签名串（用于接口安全与身份校验）")
     private String enc;
+
+    @Schema(description = "签名时间戳", example = "2024-05-2011:00:00")
+    private String time; // <--- 必须加上这个字段
 }
