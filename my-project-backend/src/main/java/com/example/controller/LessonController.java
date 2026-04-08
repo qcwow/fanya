@@ -12,6 +12,7 @@ import com.example.service.LessonService;
 import com.example.utils.SignUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,10 +23,10 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "2.1 智课智能生成模块", description = "处理课件解析、脚本生成及语音合成")
 public class LessonController {
 
-    @Autowired
+    @Resource
     private LessonService lessonService;
     
-    @Autowired
+    @Resource
     private ApiSecurityConfig securityConfig;
 
     @PostMapping("/parse")

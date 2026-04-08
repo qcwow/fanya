@@ -10,6 +10,7 @@ import com.example.entity.vo.ProgressTrackVO;
 import com.example.mapper.LearningProgressMapper;
 import com.example.service.ProgressService;
 import com.example.utils.SignUtils;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,10 +27,10 @@ import java.util.Map;
 @Service
 public class ProgressServiceImpl implements ProgressService {
 
-    @Autowired
+    @Resource
     private LearningProgressMapper learningProgressMapper;
 
-    @Value("${api.security.static-key}")
+    @Value("${fanya.api.static-key}")
     private String staticKey;
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

@@ -67,7 +67,7 @@ public record RestBean<T> (int code, String msg, T data, String requestId) {
         return JSONObject.toJSONString(this, JSONWriter.Feature.WriteNulls);
     }
 
-    private static String getRequestIdFromMDC() {
+    public static String getRequestIdFromMDC() {
         return Optional.ofNullable(MDC.get("reqId")).orElse("req000000000000");
     }
 }
